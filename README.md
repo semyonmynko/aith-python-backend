@@ -20,6 +20,8 @@ Miro](https://miro.com/app/board/uXjVKkM4JvE=/?share_link_id=92562179702) (вс�
 
 ### Лекция 1 - Основы сети и Python Backend
 
+uvicorn lecture_1.main:app --host 0.0.0.0 --port 8000 --reload
+
 Реализовать "Математическое API" из примера напрямую через ASGI-compatible
 функцию. В частности
 
