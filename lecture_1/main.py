@@ -33,7 +33,6 @@ async def app(scope, receive, send):
 
 
 async def receive_body(receive):
-    """Функция для получения полного тела запроса."""
     body = b""
     more_body = True
     while more_body:
