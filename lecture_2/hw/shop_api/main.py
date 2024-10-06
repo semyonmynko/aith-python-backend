@@ -2,11 +2,13 @@ from fastapi import FastAPI, HTTPException
 from http import HTTPStatus
 from starlette.responses import Response
 from typing import List, Optional
+from prometheus_fastapi_instrumentator import Instrumentator
 
 from .queries import get_cart, create_cart, get_carts, add_item, get_item, get_items, delete_item, add_item_in_cart, change_item, modify_item
 from .models import Cart, Item, ItemPut, ItemPatch
 
 app = FastAPI(title="Shop API")
+Instrumentator().instrument(app).expose(app)
 
 
 @app.post(
