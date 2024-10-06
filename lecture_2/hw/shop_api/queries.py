@@ -29,9 +29,13 @@ def get_items(
     if offset >= len(_carts):
         return []
     
-    if min_price or max_price is not None:
-        if min_price or max_price  < 0:
-            raise ValueError("Min and max values must be non-negative.")
+    if min_price is not None:
+        if min_price < 0:
+            raise ValueError("Min values must be non-negative.")
+    
+    if max_price is not None:
+        if max_price < 0:
+            raise ValueError("Max values must be non-negative.")
     
     if offset >= len(_items):
         return []
